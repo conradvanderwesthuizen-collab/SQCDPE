@@ -1,0 +1,79 @@
+{
+  "visualization": {
+    "id": "safety-wheel-donut",
+    "name": "Safety Wheel Donut",
+    "description": "Donut chart where each slice represents a Date and is colored by Status (Safe/Warning/Unsafe).",
+    "organization": "Your Org",
+    "logoUrl": "https://raw.githubusercontent.com/google/datastudio/gh-pages/images/dslogo.svg",
+    "supportUrl": "https://lookerstudio.google.com/",
+    "releaseStatus": "beta",
+    "privacyPolicyUrl": "https://policies.google.com/privacy"
+  },
+  "components": [
+    {
+      "id": "safety-wheel-component",
+      "name": "Safety Wheel",
+      "description": "Radial donut with conditional colors",
+      "resource": {
+        "js": [
+          "index.js"
+        ],
+        "css": []
+      },
+      "fields": {
+        "dimensions": [
+          {
+            "id": "date",
+            "name": "Date"
+          },
+          {
+            "id": "status",
+            "name": "Status"
+          }
+        ],
+        "metrics": [
+          {
+            "id": "value",
+            "name": "Value"
+          }
+        ]
+      },
+      "style": {
+        "element": "div",
+        "default": {
+          "height": "400px"
+        }
+      },
+      "options": {
+        "safeColor": {
+          "type": "COLOR",
+          "label": "Safe color",
+          "defaultValue": "#2ECC71"
+        },
+        "warningColor": {
+          "type": "COLOR",
+          "label": "Warning color",
+          "defaultValue": "#8E6B3A"
+        },
+        "unsafeColor": {
+          "type": "COLOR",
+          "label": "Unsafe color",
+          "defaultValue": "#E74C3C"
+        },
+        "hole": {
+          "type": "SLIDER",
+          "label": "Donut hole (0\u20130.9)",
+          "min": 0,
+          "max": 0.9,
+          "step": 0.01,
+          "defaultValue": 0.65
+        },
+        "showLegend": {
+          "type": "CHECKBOX",
+          "label": "Show legend",
+          "defaultValue": false
+        }
+      }
+    }
+  ]
+}
